@@ -5,13 +5,6 @@ var log = require('./libs/log.js')(module);
 var config = require('./libs/config');
 //var ArticleModel = require('./libs/mongoose').ArticleModel;
 var app = express();
-    app.listen(config.get('port'), function(){
-        log.info('Express server listening on port ' + config.get('port'));
-        var array = ['asdasd', 'qweqwe', 'zxcxzczx'];
-        console.log(array.filter(function(e){
-            return e.indexOf('x') !== -1;
-        }));
-    });
 
 app.use('/css', express.static(__dirname + '/css'));
 app.use("/js", express.static(__dirname + '/js'));
@@ -20,7 +13,7 @@ app.set('views', __dirname + '/tpl');
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-    res.render('page');
+    res.render('page', { title: 'Basic Node.js Project - HOME' });
 });
 
 app.get('/api/articles', function(req, res) {
@@ -128,7 +121,7 @@ app.delete('/api/articles/:id', function (req, res){
 app.use(function(req, res, next){
     res.status(404);
     log.debug('Not found URL: %s',req.url);
-    res.send({ error: 'Not found' });
+    res.render('404', { title: 'Page not found' });
 });
 
 app.use(function(err, req, res, next){
@@ -137,3 +130,6 @@ app.use(function(err, req, res, next){
     res.send({ error: err.message });
 });
 
+app.listen(config.get('port'), function(){
+    log.info('Express server listening on port ' + config.get('port'));
+});
