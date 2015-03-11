@@ -1,0 +1,15 @@
+{
+    "name": "NodeChat",
+    "version": "1.0.0",
+    "description": "My first Node.js chat",
+    "main": "index.js",
+    "dependencies": {
+        "socket.io": "latest",
+        "express": "latest",
+        "ejs": "latest"
+    },
+    "author": "Валерий",
+    "engines" : {
+        "node": "0.12.0"
+    }
+}
