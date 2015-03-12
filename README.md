@@ -1,6 +1,8 @@
 # BNJSP
 Basic Node.js Project
 
+node.js<br><br>
+
 server: Express - https://www.npmjs.com/package/express <br>
 template engine: ejs - https://www.npmjs.com/package/ejs <br>
 database: mongodb - http://www.mongodb.org/ <br>
@@ -15,4 +17,5 @@ Back-end features: <br>
 1. <br>
 <br>
 Front-end features: <br>
-1.<br>
+1. Parallax - http://pixelcog.github.io/parallax.js/<br>
+2. Css Animates - http://daneden.github.io/animate.css/
