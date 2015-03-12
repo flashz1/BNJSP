@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%- title %></title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/animate.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <script src="js/client.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default">
+<nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -32,14 +32,6 @@
         </div>
     </div>
 </nav>
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-6">
-            </div>
-            <div class="col-xs-6 text-right">
-            </div>
-        </div>
-    </div>
+<header class="parallax-window" data-parallax="scroll" data-image-src="<%- headerImage %>">
 </header>
-<div class="container">
+<div class="container-fluid">

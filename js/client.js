@@ -1,4 +1,4 @@
 var socket;
-$(window).onload(function(){
+window.onload = function(){
 
-});
+};

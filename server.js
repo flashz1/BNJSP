@@ -7,13 +7,19 @@ var config = require('./libs/config');
 var app = express();
 
 app.use('/css', express.static(__dirname + '/css'));
+app.use("/libs", express.static(__dirname + '/libs'));
 app.use("/js", express.static(__dirname + '/js'));
+app.use("/img", express.static(__dirname + '/img'));
 
 app.set('views', __dirname + '/tpl');
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res) {
-    res.render('page', { title: 'Basic Node.js Project - HOME' });
+    res.render('page', { title: 'Basic Node.js Project - HOME', headerImage: '/img/headerbg.jpg' });
+});
+
+app.get('/login', function (req, res) {
+    res.render('login', { title: 'Basic Node.js Project - LOGIN', headerImage: '/img/loginbg.jpg' });
 });
 
 app.get('/api/articles', function(req, res) {
