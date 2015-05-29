@@ -1,12 +1,24 @@
 {
-    "name": "NodeChat",
-    "version": "1.0.0",
-    "description": "My first Node.js chat",
-    "main": "index.js",
+    "name": "BNJSP",
+    "description": "Basic Node.js Project",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
     "dependencies": {
-        "socket.io": "latest",
         "express": "latest",
-        "ejs": "latest"
+        "ejs": "latest",
+        "body-parser": "latest",
+        "cookie-parser": "latest",
+        "request": "latest",
+        "nconf": "latest",
+        "winston": "latest",
+        "numeral": "latest",
+        "serve-favicon": "latest",
+        "basic-auth": "latest",
+        "callsite": "latest",
+        "mongoose": "latest",
+        "satelize": "latest"
     },
     "author": "Валерий",
     "engines" : {
