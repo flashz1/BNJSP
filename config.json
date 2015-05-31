@@ -1,6 +1,27 @@
 {
-    "port" : 1337,
-    "mongoose": {
-        "uri": "mongodb://localhost/test1"
+    "debug": true,
+    "environment": "prod",
+    "server": {
+        "basicAuth": {
+            "require": true,
+            "name": "bnjsp",
+            "pass": "951753qwe"
+        },
+        "address": "localhost",
+        "port" : 8080
+    },
+    "db": {
+        "url": "mongodb://localhost/",
+        "dbName": "bnjsp",
+        "options": {
+            "db": {
+                "native_parser": true
+            },
+            "server": {
+                "socketOptions": {
+                    "keepAlive": 1
+                }
+            }
+        }
     }
 }
