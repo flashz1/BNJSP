@@ -10,6 +10,8 @@
         "ejs": "latest",
         "body-parser": "latest",
         "cookie-parser": "latest",
+        "express-session": "latest",
+        "connect-mongo": "latest",
         "request": "latest",
         "nconf": "latest",
         "winston": "latest",

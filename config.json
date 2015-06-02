@@ -10,6 +10,9 @@
         "address": "localhost",
         "port" : 8080
     },
+    "session": {
+      "secret": "keyboard cat"
+    },
     "db": {
         "url": "mongodb://localhost/",
         "dbName": "bnjsp",
@@ -20,7 +23,8 @@
             "server": {
                 "socketOptions": {
                     "keepAlive": 1
-                }
+                },
+                "poolSize": 1
             }
         }
     }
