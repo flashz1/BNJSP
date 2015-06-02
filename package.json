@@ -3,7 +3,7 @@
     "description": "Basic Node.js Project",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node app.js"
     },
     "dependencies": {
         "express": "latest",
@@ -24,6 +24,6 @@
     },
     "author": "Валерий",
     "engines" : {
-        "node": "0.12.0"
+        "node": "0.12.4"
     }
 }
