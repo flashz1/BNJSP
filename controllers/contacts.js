@@ -2,7 +2,7 @@ var express = require('express'),
     router = express.Router();
 
 router.get('/', function(req, res){
-    res.render('login');
+    res.send(req.session.user);
 });
 
 module.exports = router;

@@ -1,4 +1,5 @@
-var winston = require('winston');
+var winston = require('winston'),
+    utils = require('./');
 
 function getLogger(module) {
     var path = module.filename.split('/').slice(-2).join('/'); //отобразим метку с именем файла, который выводит сообщение
@@ -9,6 +10,17 @@ function getLogger(module) {
                 colorize:   true,
                 level:      'debug',
                 label:      path
+            }),
+            new winston.transports.File({
+                filename: __dirname + '/log/logs.log',
+                label: path,
+                timestamp: function () {
+                    return utils.getDateByFormat();
+                },
+                options: {
+                    flags: 'a',
+                    highWaterMark: 24
+                }
             })
         ]
     });

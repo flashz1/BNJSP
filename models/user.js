@@ -1,6 +1,7 @@
 var crypto = require('crypto'),
     mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+    Schema = mongoose.Schema,
+    utils = require('../utils');
 
 
 var userSchema = new Schema({
@@ -23,7 +24,7 @@ var userSchema = new Schema({
     },
     created: {
         type: Date,
-        default: Date.now
+        default: utils.getDateByFormat()
     }
 });
 
@@ -43,6 +44,23 @@ userSchema.virtual('password')
 
 userSchema.methods.checkPassword = function(password){
     return this.encryptPassword(password) === this.hashedPassword;
+};
+
+userSchema.statics.authorize = function(username, password, callback){
+    return this.findOne({ username: username}, function(err, user){
+        if(err) return next(err);
+        if(user){
+            console.log('User - is ok!');
+            if(user.checkPassword(password)){
+                console.log('Password - is ok!');
+                callback(null, user);
+            }else{
+                callback(403, 'Wrong password')
+            }
+        }else{
+            callback(404,'Wrong user')
+        }
+    });
 };
 
 var users = mongoose.model('users', userSchema);

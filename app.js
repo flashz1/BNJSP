@@ -29,7 +29,7 @@ app.use(session({
 app.use(require('./controllers'));
 
 db.once('open', function () {
-    console.log('Connected to DB: ' + config.get('db:dbName'));
+    log.info('Connected to DB: ' + config.get('db:dbName'));
     app.listen(config.get('server:port'), function(){
         log.info('Express server listening on port ' + config.get('server:port'));
     });

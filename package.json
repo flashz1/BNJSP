@@ -1,7 +1,7 @@
 {
     "name": "BNJSP",
     "description": "Basic Node.js Project",
-    "main": "server.js",
+    "main": "app.js",
     "scripts": {
         "start": "node app.js"
     },
@@ -16,12 +16,8 @@
         "nconf": "latest",
         "winston": "latest",
         "request": "latest",
-        "numeral": "latest",
         "serve-favicon": "latest",
-        "basic-auth": "latest",
-        "callsite": "latest",
-        "mongoose": "latest",
-        "satelize": "latest"
+        "mongoose": "latest"
     },
     "author": "Валерий",
     "engines" : {

@@ -1,6 +1,6 @@
 var express = require('express'),
     router = express.Router(),
-    user = require('../models/user'),
+    User = require('../models/user'),
     log = require('../utils/log')(module);
 
 router.get('/', function(req, res){
@@ -12,7 +12,7 @@ router.post('/', function(req, res){
         useremail = req.body.useremail,
         password = req.body.password;
 
-    var newUser = new user({
+    var newUser = new User({
         username: username,
         useremail: useremail,
         password: password

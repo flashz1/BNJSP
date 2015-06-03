@@ -27,5 +27,9 @@
                 "poolSize": 1
             }
         }
+    },
+    "locale": {
+        "dateTimeFormatFull": "MMM d \\'yy \\a\\t HH:mm:ss",
+        "dateTimeFormat": "dd.MM.yy HH:mm:ss"
     }
 }
