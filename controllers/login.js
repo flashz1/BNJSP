@@ -1,6 +1,7 @@
 var express = require('express'),
     router = express.Router(),
     log = require('../utils/log.js')(module),
+    checkAuth = require('../middleware/checkAuth'),
     User = require('../models/user');
 
 router.get('/', function(req, res){
@@ -12,7 +13,6 @@ router.post('/', function(req, res, next){
         password = req.body.password;
 
     User.authorize(username, password, function(err, user){
-        console.log(user);
         if(err) {
             return log.debug('ERROR');
         }else{

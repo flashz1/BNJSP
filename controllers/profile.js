@@ -3,7 +3,8 @@ var express = require('express'),
     checkAuth = require('../middleware/checkAuth');
 
 router.get('/', checkAuth, function(req, res){
-    res.send(req.session.user);
+    if(req.session.user)
+        res.render('profile');
 });
 
 module.exports = router;

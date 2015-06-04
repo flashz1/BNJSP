@@ -6,8 +6,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/animate.css" />
-    <link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/client.js"></script>
 </head>
 <body>
@@ -26,8 +26,13 @@
                 <li class="active"><a href="/">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <% if(!user){%>
+                    <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <%}else{%>
+                    <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> <%=user.username%></a></li>
+                    <li><a href="" class="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <%}%>
             </ul>
         </div>
     </div>

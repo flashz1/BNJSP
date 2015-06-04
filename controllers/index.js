@@ -5,6 +5,8 @@ var express = require('express'),
 
 router.use('/signup', require('./signup'));
 router.use('/login', require('./login'));
+router.use('/logout', require('./logout'));
+router.use('/profile', require('./profile'));
 router.use('/contacts', require('./contacts'));
 
 router.get('/', function(req, res) {

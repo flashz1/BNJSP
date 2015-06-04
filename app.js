@@ -25,6 +25,7 @@ app.use(session({
     saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: db})
 }));
+app.use(require('./middleware'));
 
 app.use(require('./controllers'));
 
